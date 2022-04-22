@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script>
+      let count = 0;
+        function botonSandia() {
+          var x = document.getElementById("sandia");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+
+        function clicked() {
+          let text = "";
+          if (count === 0) text = "Me clickeaste!"
+          else if (count === 1) text = "Ya basta!"
+          else if (count === 2) text = "De todos modos no hago nada :(";
+          else if (count === 3) text = "Si me clickeas una vez mas me voy"
+          else count = 0;
+          document.getElementById("clickeable").innerText = text;
+          count++
+        }
+      </script>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Ayudantia Pensamiento Visual</h2>
+      <nav>
+        <div class="content">
+          <div class="link"><a href="index.html">Tarea 3</a></div>
+          <div class="link"><a href="#">Tarea 4</a></div>
+          <div class="link"><a href="#" id="clickeable" onclick="clicked()">No me clickees</a></div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="content">
+      <div class="image">
+        <img src="assets/manzanas.png" alt="Imagen de una manzana" />
+      </div>
+      <div class="image">
+        <img src="assets/sandia.png" alt="Imagen de una sandia" id="sandia" />
+      </div>
+      <div class="image">
+        <img src="assets/naranja.png" alt="Imagen de una naranja" />
+      </div>
+    </div>
+
+    <div class="footer">
+      <p  id="cambiante">Hecho por Rodrigo Gaona</p>
+      <button onclick="botonSandia()">Sandia</button>
+    </div>
+  </body>
+</html>
